@@ -18,7 +18,19 @@ Choose a new name for the repository and select the public option. Don’t choos
 
 <img src=".github/img/step1b.png" width="767" />
 
-### :point_right: Step 2: Clone and edit 
+### :point_right: Step 2: Check permission for GitHub actions
+
+The template repository contains a GitHub action workflow that posts a comment inside the PR. 
+The comment contains a "Test this PR on Binder" badge, which can be used to access the image defined by the PR in mybinder.org.
+To enable the GitHub action workflow, you must check the permission for GitHub actions in your repository.
+
+Go to the Settings tab of your repository, then click on Actions in the left sidebar, and then go to General. Scroll down to workflow permissions and check "Read and write permissions" is selected (see the image below).
+
+<img src=".github/img/step2.png" width="1920" />
+
+Please ignore other failing GitHub actions in the forked repository, as they are not relevant for the preparation stage of the notebook.
+
+### :point_right: Step 3: Clone and edit 
 
 Clone the repo in your local/remote machine. You can follow some basics in Git commands in GitHub in The Turing Way (see [here](https://the-turing-way.netlify.app/reproducible-research/vcs/vcs-github.html?highlight=git%20commands%20work%20github)).
 
@@ -41,26 +53,26 @@ The minimal information in the edition refers to the proposed title and purpose 
 
 For instance, the following screenshot shows a notebook with minimal information requirement in `jupyter lab`. 
 
-<img src=".github/img/step2.png" width="1920" />
+<img src=".github/img/step3.png" width="1920" />
 
-### :point_right: Step 3: Open a Pull Request (PR)
+### :point_right: Step 4: Open a Pull Request (PR)
 
 After editing the notebook with minimal information, you can create a PR to the main branch. If you aren’t familiar how to open a PR, we suggest following the guidelines in [Opening a Pull Request on GitHub](https://foundations.projectpythia.org/foundations/github/github-pull-request.html) by the Pythia project.
 
 The PR will trigger a GitHub action workflow that posts a comment inside the PR. The comment contains a "Test this PR on Binder" badge, which can be used to access the image defined by the PR in mybinder.org.
 
-### :point_right: Step 4: Test in Binder
+### :point_right: Step 5: Test in Binder
 
 The workflow posts a comment inside a pull request, every time a pull request gets opened. The comment contains a "Test this PR on Binder" badge, which can be used to access the image defined by the PR in mybinder.org.
 
-<img src=".github/img/step4.png" width="923" />
+<img src=".github/img/step5.png" width="923" />
 
-### :point_right: Step 5 - Update 
+### :point_right: Step 6 - Update 
 You can update the notebook as many times you want within the same PR. You can also open a new PR, but make sure you merge or close previous PR. 
 
 To start adding the notebook dependencies, you must update the `install.R` file. For instance, the screenshot below we pushed an `Update notebook.ipnyb` commit related to importing a new library in the Load libraries section. 
 
-<img src=".github/img/step5.png" width="923" />
+<img src=".github/img/step6.png" width="923" />
 
 When the minimal working version of the notebook is ready, you should tag Editors-in-Chief (EiC) in the PR with the latest Binder badge. EiC will check how reproducible is the notebook and its feasibility for the reviewing stage.
 
@@ -68,7 +80,7 @@ After EiC’s approval of the draft version of the notebook, EiC will fork the n
 
 EiC will prepare the notebook in the forked repository for the review process.
 
-### :point_right: Step 6 - Reviewing process
+### :point_right: Step 7 - Reviewing process
 EiC will open a PRE-REVIEW issue where a handling editor and authors suggest reviewers. The editor can give initial directions to authors for improving the notebook, especially if the notebook lacks some requested sections. Once reviewers agreed on the revision, EiC opens a REVIEW issue.
 
 We suggest to read further details of the REVIEW process in the publishing guidelines (see [here](https://github.com/alan-turing-institute/environmental-ds-book/blob/master/book/publishing/guidelines/guidelines-authors.md)). 
